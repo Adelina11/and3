@@ -1,18 +1,41 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+public class Main {
+    public static void main(String[] args) {
+        int n = 0, i = 0; int [] a = new int[0];
+        String str = "";
+        try(FileReader reader = new FileReader("in.txt")) {
+            int a;
+            while ((a = reader.read()) != -1) {
+                if ((char) a == '\n') {
+                System.out.println(str);
+                n = Integer.parseInt(str);
+                Integer.parseInt(str);
+                str = "";
+                a = new int[n];
+            }else if ((char) a == ' '){
+            a[i] = Integer.parseInt(str);
+            str = "";
+                    i++;
+        }else{
+            str += (char) a;
+        }
 
-# Other files and folders
-.settings/
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+    }
+}
+        catch (IOException ex){
+        System.out.println(ex.getMessage());
+        }
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+        try(FileWriter writer = new FileWriter("out.txt", false) {
+        for (int j = 0; j<n; j ++){
+        if (a[j] % 2 == 0 & a[j] > 0) writer.append(Integer.toString(a[j]) + " ");
+        }
+        }
+        
+        catch(IOException ex){
+        System.out.println(ex.getMessage();
+        }
+        }}
